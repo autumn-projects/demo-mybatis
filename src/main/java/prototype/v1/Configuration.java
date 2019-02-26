@@ -1,4 +1,4 @@
-package building;
+package prototype.v1;
 
 import java.lang.reflect.Proxy;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ public class Configuration {
      * 2.
      */
     static class TestMapperXml {
-        public static final String namespace = "building.TestMapper";
+        public static final String namespace = "prototype.v1.TestMapper";
 
         public static final Map<String, String> methodSqlMapping = new HashMap<String, String>();
 

@@ -1,4 +1,4 @@
-package building;
+package prototype.v1;
 
 public interface TestMapper {
 
