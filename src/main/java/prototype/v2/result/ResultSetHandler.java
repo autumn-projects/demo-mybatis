@@ -29,6 +29,7 @@ public class ResultSetHandler {
     }
 
     private void setValue(Object resultObj, Field field, ResultSet rs, int i) throws NoSuchMethodException, SQLException, InvocationTargetException, IllegalAccessException {
+        System.out.println("methodName:" + "set" + upperCapital(field.getName()));
         Method setMethod = resultObj.getClass().getMethod("set" + upperCapital(field.getName()), field.getType());
         setMethod.invoke(resultObj, getResult(field, rs));
     }

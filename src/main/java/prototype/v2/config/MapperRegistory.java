@@ -11,7 +11,7 @@ public class MapperRegistory {
     //使用 1. 在这里配置
     //2. Java Bean的属性名字要和数据库表的名字一致
     public MapperRegistory() {
-        methodSqlMapping.put("com.gupaoedu.mybatis.my.TestMapper.selectByPrimaryKey",
+        methodSqlMapping.put("prototype.v2.config.mappers.TestMapper.selectByPrimaryKey",
                 new MapperData("select * from test where id = %d", Test.class));
     }
 

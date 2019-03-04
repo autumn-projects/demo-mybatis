@@ -19,7 +19,7 @@ public class BootStrap {
         configuration.setScanPath("prototype.v2.config.mappers");
         configuration.build();
         SqlSession sqlSession = new SqlSession(configuration,
-                ExecutorFactory.get(ExecutorFactory.ExecutorType.CACHING.name(), configuration));
+                ExecutorFactory.get(ExecutorFactory.ExecutorType.SIMPLE.name(), configuration));
         TestMapper testMapper = sqlSession.getMapper(TestMapper.class);
         long start = System.currentTimeMillis();
         Test test = testMapper.selectByPrimaryKey(1);

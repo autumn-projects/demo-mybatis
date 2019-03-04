@@ -2,15 +2,15 @@ package prototype.v1;
 
 public class Test {
 
-    private int id;
-    private int nums;
+    private Integer id;
+    private Integer nums;
     private String name;
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -18,7 +18,7 @@ public class Test {
         return nums;
     }
 
-    public void setNums(int nums) {
+    public void setNums(Integer nums) {
         this.nums = nums;
     }
 
