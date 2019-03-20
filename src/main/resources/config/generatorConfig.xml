@@ -2,47 +2,38 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-        
-        <generatorConfiguration>
-    <classPathEntry location="C:\Users\gloria\.m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
-    <context id="MySqlTables" targetRuntime="MyBatis3">
-<!--     	<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>   -->
-<!--         <plugin type="com.swings.dao.SerializablePlugin"></plugin>  -->
-<!--          <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>  -->
-<!-- mergeable 为true时，可合并，为false，重新生成的时采用覆盖-->
-    	<property name="mergeable" value="false"></property>
-     	<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
-        <property name="javaFileEncoding" value="UTF-8"/>
-        <plugin type="com.swings.dao.SerializablePlugin" />
-         <!-- 这里的type里写的是你的实现类的类全路径 -->
-        <commentGenerator type="com.swings.dao.MyCommentGenerator"></commentGenerator>
-<!--         <plugin type="com.swings.dao.SerializablePlugin"></plugin> -->
-        <!-- Pagination -->  
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/ygh?useSSL=true"
-                        userId="root"
-                        password="">
+<!-- java -jar mybatis-generator-core-x.x.x.jar -configfile generatorConfig.xml -overwrite -->
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry
+            location="C:\Users\gloria\.m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://115.28.94.53:3306/test"
+                        userId="test" password="123456">
         </jdbcConnection>
-        
-        <javaTypeResolver >
-            <property name="forceBigDecimals" value="true" />
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-
-        <javaModelGenerator targetPackage="com.swings.dao.model.generator" targetProject="src\main\java">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="generator.model" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-
-        <sqlMapGenerator targetPackage="com.swings.dao.mapping.generator"  targetProject="src\main\resources">
-            <property name="enableSubPackages" value="true" />
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.swings.dao.mapping.generator"  targetProject="src\main\java">
-            <property name="enableSubPackages" value="true" />
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="generator.dao" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-			
-		<table schema="ygh" tableName="user_coupon" domainObjectName="UserCoupon" ></table>
-		
+        <!--生成对应表及类名-->
+        <table tableName="test" domainObjectName="Test" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
-    
 </generatorConfiguration>
