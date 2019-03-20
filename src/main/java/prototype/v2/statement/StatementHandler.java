@@ -40,9 +40,9 @@ public class StatementHandler {
 
     public Connection getConnection() throws SQLException {
         String driver = "com.mysql.jdbc.Driver";
-        String username = "root";
-        String password = "oscroll123";
-        String url = "jdbc:mysql://115.28.94.53:3306/kysj?autoReconnect=true&useUnicode=true&characterEncoding=utf-8";
+        String username = "test";
+        String password = "123456";
+        String url = "jdbc:mysql://115.28.94.53:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8";
         Connection conn = null;
         try {
             Class.forName(driver); //classLoader,加载对应驱动

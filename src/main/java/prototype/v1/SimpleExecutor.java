@@ -11,9 +11,9 @@ public class SimpleExecutor implements Executor {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String username = "root";
-            String password = "oscroll123";
-            String url = "jdbc:mysql://115.28.94.53:3306/kysj?autoReconnect=true&useUnicode=true&characterEncoding=utf-8";
+            String username = "test";
+            String password = "123456";
+            String url = "jdbc:mysql://115.28.94.53:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8";
             connection = DriverManager.getConnection(url, username, password);
 
             preparedStatement = connection.prepareStatement(
